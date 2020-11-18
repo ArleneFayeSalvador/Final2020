@@ -39,17 +39,18 @@ $H_A$ The Alternative Hypothesis is that is that among the target population, th
 DataF = filter(FinalData, sex=="gal")
 barchartGC(~infected + treatment,data=DataF)
 barchartGC(~infected + treatment,data=DataF, type="percent")
-```
-It appears that the vaccine has a positive effect on the gals since they are less likely to get Covid-19 if they receive the vaccine.
+```  
+
+It appears that the vaccine has a positive effect on the gals since they are less likely to get Covid-19 if they receive the vaccine.  
 
 
 ```{r}
 DataG = filter(FinalData, sex=="guy")
 barchartGC(~infected + treatment,data=DataG)
 barchartGC(~infected + treatment,data=DataG, type="percent")
-```
+```  
 
-It appears that the vaccine has a negative effect on the guys since they are more likely to get Covid-19 if they receive the vaccine.
+It appears that the vaccine has a negative effect on the guys since they are more likely to get Covid-19 if they receive the vaccine.  
 
 # Drug User
 
@@ -58,8 +59,9 @@ DrugUser = filter(FinalData,DrugUser=="yes")
 barchartGC(~infected + treatment,data=DrugUser)
 barchartGC(~infected + treatment,data=DrugUser, type="percent", main="DrugUser")
 
-```
-It appears that the vaccine has a positive effect on DrugUsers since they are less likely to get Covid-19 if they receive the vaccine.
+```  
+
+It appears that the vaccine has a positive effect on DrugUsers since they are less likely to get Covid-19 if they receive the vaccine.  
 
 
 # LGBTQ
@@ -69,8 +71,9 @@ DataLGBTQ = filter(FinalData,LGBTQ=="gay")
 barchartGC(~infected + treatment,data=DataLGBTQ)
 barchartGC(~infected + treatment,data=DataLGBTQ, type="percent", main="LGBTQ")
 
-```
-It appears that the vaccine has a negative effect on gays since they are more likely to get Covid-19 if they receive the vaccine.
+```  
+
+It appears that the vaccine has a negative effect on gays since they are more likely to get Covid-19 if they receive the vaccine.  
 
 # Numerical Summaries
 
@@ -140,3 +143,10 @@ fisher.test(table1)
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
+According to the bar charts and numerical results for females, we can see that females that took the drug are less likely to contract COVID-19. There were only 33.11 women infected with COVID-19 and 50.31 that were not infected with the drug. According to the inferential test, 95.56% of women were not infected which makes the vaccine very effective among the female population. The P-Value: 2.2e-16 is less than 0.05, so we reject the null Hypothesis. The vaccine did have an effect which was positive in the Female population, which led to them not contracting COVID-19.
+
+According to the bar charts and numerical results for males, we can see that males were more likely to contract COVID-19. There were 58.16 of males who took the drug and contracted COVID-19, while 48.54 remained okay. The P-value: 6e-04 is less than 0.05, so we reject the null hypothesis. The vaccine had an effect in males, however it was a negative effect because more males contracted COVID-19 than not.
+
+According to the bar charts and numerical results for Drug Users, we can see that Drug Users were less likely to contract COVID-19. There were 33.33 Drug Users infected with COVID-19 with the drug, and 47.83 who were not infected with COVID-19 with the drug. The P-Value: 5.741e-06 is less than 0.05, so we reject the null hypothesis. The vaccine had an effect which was positive in Drug Users, which led to them not contracting COVID-19.
+
+According to the bar charts and numerical results for LGBTQ, we can see that the LGBTQ community were more likely to contract COVID-19. There were 70.69 who contracted COVID-19 with the treatment, and 49.17 did not contract the virus with treatment. The P-Value:5.741e-06, is less than 0.05, so we reject the null hypothesis. The vaccine did have an effect on the LGBTQ community, but it was a negative effect because more LGBTQ contracted COVID-19 than not.
