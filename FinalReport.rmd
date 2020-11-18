@@ -1,7 +1,7 @@
 ---
 title: "Covid91 vaccine study Final2020"
-author: "Put your name here!"
-date: "put the date here"
+author: "Arlene Faye Salvador"
+date: "October 29, 2020"
 output: html_document
 ---
 
@@ -20,6 +20,10 @@ FinalData <- OldData %>% mutate(infected = recode(infected, aids = "covid", none
 
 A new  preventative vaccine (covid91) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine.
 
+$H_0$ The Null Hypothesis is that among the target population, the vaccine has no effect on whether one contracts the virus or not.
+
+$H_A$ The Alternative Hypothesis is that is that among the target population, the vaccine has an effect on whether one contracts the virus or not.
+
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
@@ -28,8 +32,13 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
+# Graphical Results
+# Female Report
 
+```{r}
+DataF = filter(FinalData, sex=="gal")
+barchartGC(~infected + treatment,data=DataF)
+barchartGC(~infected + treatment,data=DataF, type="percent")
+```
+It appears that the vaccine has a positive effect on the gals since they are less likely to get Covid-19 if they receive the vaccine.
 
-# Discussion and Conclusion
-
-<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
