@@ -51,3 +51,14 @@ barchartGC(~infected + treatment,data=DataG, type="percent")
 
 It appears that the vaccine has a negative effect on the guys since they are more likely to get Covid-19 if they receive the vaccine.
 
+# Drug User
+
+```{r}
+DrugUser = filter(FinalData,DrugUser=="yes")
+barchartGC(~infected + treatment,data=DrugUser)
+barchartGC(~infected + treatment,data=DrugUser, type="percent", main="DrugUser")
+
+```
+It appears that the vaccine has a positive effect on DrugUsers since they are less likely to get Covid-19 if they receive the vaccine.
+
+
