@@ -72,3 +72,71 @@ barchartGC(~infected + treatment,data=DataLGBTQ, type="percent", main="LGBTQ")
 ```
 It appears that the vaccine has a negative effect on gays since they are more likely to get Covid-19 if they receive the vaccine.
 
+# Numerical Summaries
+
+# Female Report
+```{r}
+DataF = filter(FinalData,sex=="gal")
+table1 <- xtabs(~infected + treatment, data=DataF)
+rowPerc(table1)
+colPerc(table1)
+```
+According to gals,
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+```{r}
+DataG = filter(FinalData,sex=="guy")
+table1 <- xtabs(~infected + treatment, data=DataG)
+rowPerc(table1)
+colPerc(table1)
+```
+According to Guys,
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+```{r}
+DrugUser = filter(FinalData,DrugUser=="yes")
+table1 <- xtabs(~infected + treatment, data=DrugUser)
+rowPerc(table1)
+colPerc(table1)
+```
+
+According to DrugUsers,
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+```{r}
+DataLGBTQ = filter(FinalData,LGBTQ=="gay")
+table1 <- xtabs(~infected + treatment, data=DataLGBTQ)
+rowPerc(table1)
+colPerc(table1)
+```
+According to gays,
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+# Discussion and Conclusion
+
+<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
