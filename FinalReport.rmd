@@ -62,3 +62,13 @@ barchartGC(~infected + treatment,data=DrugUser, type="percent", main="DrugUser")
 It appears that the vaccine has a positive effect on DrugUsers since they are less likely to get Covid-19 if they receive the vaccine.
 
 
+# LGBTQ
+
+```{r}
+DataLGBTQ = filter(FinalData,LGBTQ=="gay")
+barchartGC(~infected + treatment,data=DataLGBTQ)
+barchartGC(~infected + treatment,data=DataLGBTQ, type="percent", main="LGBTQ")
+
+```
+It appears that the vaccine has a negative effect on gays since they are more likely to get Covid-19 if they receive the vaccine.
+
